@@ -49,7 +49,7 @@ public class Main extends JFrame {
         slider.setLabelTable(table);
         slider.setSnapToTicks(true);
         slider.setValue(0);
-        slider.setSize(300,70);
+        slider.setSize(300,60);
         bar_panel.add(slider);
         
         slider.addChangeListener(new ChangeListener() {
@@ -121,6 +121,8 @@ public class Main extends JFrame {
             } catch(Exception e) {}    
         }
     }
+    
+    
     
     private void zoomOut(int value) {
         
@@ -292,7 +294,6 @@ public class Main extends JFrame {
                             temp_list.add(((y_coords.get(yy)*x_coords.get(xx))/(pixel_area/100))*(float)0.01);
                         }
                         proportions.add(temp_list);
-                        
                     }
                 }
                 int blue = 0;
@@ -308,8 +309,6 @@ public class Main extends JFrame {
                     blue += (color & 0xff)*prop;
                     green += ((color & 0xff00) >> 8)*prop;
                     red += ((color & 0xff0000) >> 16)*prop;
-
-                    
                 }
                 int rgb = red;
                 rgb = (rgb << 8) + green;
@@ -319,6 +318,7 @@ public class Main extends JFrame {
         }    
         pic_label.setIcon(new ImageIcon(new_pic));
     }
+    
     
     
     public static void main(String[] args) {
